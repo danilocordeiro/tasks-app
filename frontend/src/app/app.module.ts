@@ -11,6 +11,7 @@ import { TaskFormDialogComponent } from './pages/task/task-form-dialog/task-form
 import { TaskComponent } from './pages/task/task.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { TaskService } from './services/task.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     StoreModule.forRoot({}, {}),
     PrimengModule,
   ],
-  providers: [],
+  providers: [TaskService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
