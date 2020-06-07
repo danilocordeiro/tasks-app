@@ -1,2 +1,14 @@
-<p>task works!</p>
-<app-task-lists></app-task-lists>
+<p-card>
+  <div class="header-page">
+    <div>
+      <h2>Tasks</h2>
+    </div>
+    <div>
+      <p-button label="New task" styleClass="ui-button-info" (onClick)="openTaskDialog({}, 'new')"></p-button>
+    </div>
+  </div>
+
+  <div style="margin-top: 10px;">
+    <app-task-lists></app-task-lists>
+  </div>
+</p-card>
