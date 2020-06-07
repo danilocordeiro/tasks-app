@@ -9,13 +9,24 @@ import { ToolBarComponent } from './shared/components/tool-bar/tool-bar.componen
 import { TaskListsComponent } from './pages/task/task-lists/task-lists.component';
 import { TaskFormDialogComponent } from './pages/task/task-form-dialog/task-form-dialog.component';
 import { TaskComponent } from './pages/task/task.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, ToolBarComponent, TaskListsComponent, TaskFormDialogComponent, TaskComponent],
+  declarations: [
+    AppComponent,
+    ToolBarComponent,
+    TaskListsComponent,
+    TaskFormDialogComponent,
+    TaskComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     StoreModule.forRoot({}, {}),
     PrimengModule,
   ],
