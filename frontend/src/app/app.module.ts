@@ -12,6 +12,7 @@ import { TaskComponent } from './pages/task/task.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TaskService } from './services/task.service';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { TaskService } from './services/task.service';
     HttpClientModule,
     StoreModule.forRoot({}, {}),
     PrimengModule,
+    DragDropModule,
   ],
   providers: [TaskService],
   bootstrap: [AppComponent],

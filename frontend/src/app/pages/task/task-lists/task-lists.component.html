@@ -1,1 +1,51 @@
-<p>task-lists works!</p>
+<div class="p-grid">
+  <div class="p-col-6">
+    <h2>To Do</h2>
+    <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo" [cdkDropListConnectedTo]="[completedList]"
+      class="task-list" (cdkDropListDropped)="drop($event)">
+      <div class="task-box" *ngFor="let item of todo; let i = index" cdkDrag>
+        Title: {{item.title}}
+        <br>
+        Description: {{item.description}}
+        <br>
+        Created at: {{item.createdAt}}
+        <br>
+        {{item.updatedAt ? ("Last update: " + item.updatedAt.toString())  : "" }}
+
+        <div class="p-col-3">
+          <button pButton type="button" icon="pi pi-pencil" class="ui-button-rounded ui-button-warning"
+            (click)="openTaskDialog(item, 'edit')"></button>
+
+          <button pButton type="button" icon="pi pi-trash" class="ui-button-rounded ui-button-danger"
+            (click)='removeTask(i, todo)'></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="p-col-6">
+    <h2>Done</h2>
+    <div cdkDropList #completedList="cdkDropList" [cdkDropListData]="completed" [cdkDropListConnectedTo]="[todoList]"
+      class="task-list" (cdkDropListDropped)="drop($event)">
+      <div class="task-box" *ngFor="let item of completed; let i = index" cdkDrag>
+        Title: {{item.title}}
+        <br>
+        Description: {{item.description}}
+        <br>
+        Created at: {{item.createdAt}}
+        <br>
+        {{item.updatedAt ? ("Last update: " + item.updatedAt.toString())  : "" }}
+        <br>
+        {{item.completedAt ? ("Completed at: " + item.completedAt.toString())  : "" }}
+
+        <div class="p-col-3">
+          <button pButton type="button" icon="pi pi-pencil" class="ui-button-rounded ui-button-warning"
+            (click)="openTaskDialog(item, 'edit')"></button>
+
+          <button pButton type="button" icon="pi pi-trash" class="ui-button-rounded ui-button-danger"
+            (click)='removeTask(i, todo)'></button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
