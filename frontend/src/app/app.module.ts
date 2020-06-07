@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TaskService } from './services/task.service';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { reducers } from './reducers/index';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot(reducers),
     PrimengModule,
     DragDropModule,
   ],
