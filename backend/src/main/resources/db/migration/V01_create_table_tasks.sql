@@ -1,0 +1,2 @@
+SET sql_mode = '';
+create table tasks(id bigint NOT NULL AUTO_INCREMENT, title varchar(255), description varchar(255), completed boolean, created_at datetime not null , updated_at datetime, deleted_at datetime, completed_at datetime, primary key (id));
